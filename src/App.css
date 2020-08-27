@@ -3,7 +3,6 @@
   color: #282c34;
 }
 
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -12,7 +11,6 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  
 }
 
 .App-link {
@@ -24,14 +22,13 @@
   max-width: 1000px;
   height: 70vh;
   background-color: floralwhite;
-
 }
 
 .input input {
   margin-top: 40px;
-  color: rgba(0,0,0,0.4);
+  color: rgba(0, 0, 0, 0.4);
   font-size: 16px;
-  width: 60
+  width: 60;
 }
 
 .circular {
@@ -39,7 +36,6 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
-  
 }
 
 .complete {
@@ -47,8 +43,8 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
-  background-color: #4CAF50;
-  border: 0.5px solid #4CAF50; /* Green */
+  background-color: #4caf50;
+  border: 0.5px solid #4caf50; /* Green */
 }
 .linethrough {
   text-decoration: line-through;
@@ -60,14 +56,13 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
-  border: 1px solid #4CAF50; /* Green */
+  border: 1px solid #4caf50; /* Green */
   background-color: floralwhite;
 }
 
 .noline {
   text-decoration: none;
   opacity: 1;
-
 }
 .listItem {
   display: inline-block;
@@ -92,4 +87,12 @@ li {
   padding-left: 0px;
   margin-top: 3px;
   list-style: none;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
 }
