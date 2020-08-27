@@ -45,6 +45,8 @@
   cursor: pointer;
   background-color: #4caf50;
   border: 0.5px solid #4caf50; /* Green */
+  margin: 0px;
+  padding: 0px;
 }
 .linethrough {
   text-decoration: line-through;
@@ -58,6 +60,8 @@
   cursor: pointer;
   border: 1px solid #4caf50; /* Green */
   background-color: floralwhite;
+  margin: 0px;
+  padding: 0px;
 }
 
 .noline {
@@ -95,4 +99,21 @@ li {
 
 .hidden {
   visibility: hidden;
+}
+
+.listHolder {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+button {
+  background-color: #2d4d57;
+  color: floralwhite;
+  border: none;
+  margin: 5px;
+  padding: 10px 30px;
+  font-size: 0.6em;
+}
+button:hover {
+  background-color: #4caf50;
 }

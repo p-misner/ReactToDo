@@ -11,6 +11,7 @@ class InputArea extends React.Component {
       value: "",
       submit: [],
       completeList: [],
+      activeList: [],
       showComplete: "all",
     };
     this.onValueChange = this.onValueChange.bind(this);
@@ -30,11 +31,13 @@ class InputArea extends React.Component {
       array = array.concat(value);
       this.setState({
         completeList: array,
+        activeList: arr_diff(this.state.submit, array),
       });
     } else if (stage === "remove") {
       array = array.filter((item) => item !== value);
       this.setState({
         completeList: array,
+        activeList: arr_diff(this.state.submit, array),
       });
     }
   }
@@ -43,14 +46,22 @@ class InputArea extends React.Component {
     this.setState({ value });
   }
 
-  onSubmitChange(event) {
-    const list = this.state.submit.concat(this.state.value);
-    this.setState(() => {
-      return {
-        submit: list,
-        value: "",
-      };
-    });
+  onSubmitChange() {
+    if (this.state.submit.includes(this.state.value)) {
+      highlight(this.state.value);
+    } else {
+      const list = this.state.submit.concat(this.state.value);
+      let array;
+      this.setState(
+        {
+          submit: list,
+        },
+        () => {
+          array = arr_diff(this.state.submit, this.state.completeList);
+          this.setState({ activeList: array });
+        }
+      );
+    }
   }
 
   handleClearArray() {
@@ -95,12 +106,12 @@ class InputArea extends React.Component {
           completeList={this.handleCompleteChange}
           completeArray={this.state.completeList}
           showComplete={this.state.showComplete}
+          activeList={this.state.activeList}
         />
         <Button text="Clear All" onClick={this.handleClearArray} />
-        <Button text="Clear Complete" onClick={this.handleClearComplete} />
         <Button text="Show All" onClick={this.handleShowAll} />
+        <Button text="Clear Complete" onClick={this.handleClearComplete} />
         <Button text="Show Complete" onClick={this.handleShowComplete} />
-        <Button text="Show Active" onClick={this.handleShowActive} />
       </div>
     );
   }
@@ -120,6 +131,9 @@ class App extends React.Component {
 
 export default App;
 
+function highlight(value) {
+  alert("already created this task");
+}
 function arr_diff(a1, a2) {
   var a = [],
     diff = [];
@@ -139,6 +153,5 @@ function arr_diff(a1, a2) {
   for (var k in a) {
     diff.push(k);
   }
-
   return diff;
 }
