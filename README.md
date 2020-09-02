@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Live Preview
 
-Check out the project live at [React To Do App](https://p-misner.github.io/ReactToDo).
+Check out the project live at [React To Do App](https://p-misner.github.io/ReactToDo/).
 
 ![still image of the To Do app interface](./images/todo.png)
 
